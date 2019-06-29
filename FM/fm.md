@@ -8,3 +8,5 @@
 * FM模型能否将召回和排序阶段一体化
 * 优秀的开源实现：https://github.com/Angel-ML/angel
 
+[推荐系统遇上深度学习(一)--FM模型理论和实践](https://www.jianshu.com/p/152ae633fb00)
+
