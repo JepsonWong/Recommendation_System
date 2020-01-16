@@ -1,20 +1,20 @@
 # Recommendation\_System
 
-[（好文，没看完）《搜索与推荐中的深度学习匹配》之推荐篇](https://zhuanlan.zhihu.com/p/45849695)
+**个性化推荐**
 
-## 个性化推荐
+[（好文，没看完）《搜索与推荐中的深度学习匹配》之推荐篇](https://zhuanlan.zhihu.com/p/45849695)
 
 [今日头条推荐算法原理全文详解](http://lusongsong.com/info/post/9829.html)
 
 [国内外在推荐系统领域的发展现状？](https://www.zhihu.com/question/29531839/answer/554371884)
 
-### 基础工作
+## 1. 基础工作
 
 [用户画像阶段性总结](http://rongzijing.win/index.php/archives/182/)
 
-### 召回
+## 2. 召回
 
-#### 向量化：Item2vec、User2Vec召回算法
+### 2.1 向量化：Item2vec、User2Vec召回算法
 
 Item2vec
 * 把item视为word，用户的行为序列视为一个集合，item间的共现为正样本，并按照item的频率分布进行负样本采样。
@@ -30,7 +30,7 @@ Item2vec
 
 [User2Vec? representing a user based on the docs they consume](https://stackoverflow.com/questions/46426380/user2vec-representing-a-user-based-on-the-docs-they-consume)
 
-#### 基于协同过滤的推荐算法
+### 2.2 基于协同过滤的推荐算法
 
 [推荐算法之协同过滤算法(Collaborative Filtering，简称CF)](http://rongzijing.win/index.php/archives/40/)
 
@@ -45,11 +45,11 @@ Item2vec
 
 3. 混合模型（Hybrid models）
 
-#### 基于内容过滤的推荐算法
+### 2.3 基于内容过滤的推荐算法
 
 根据信息资源与用户兴趣的相似性来推荐商品，通过计算用户兴趣模型和商品特征向量之间的向量相似性，主动将相似度高的商品发送给该模型的客户。
 
-#### 基于新热的推荐算法
+### 2.4 基于新热的推荐算法
 
 将当前的热门item进行推荐。可用于冷启动的策略之一和召回的策略之一。
 
@@ -58,17 +58,17 @@ Item2vec
 * 可以从所有商品中，按照CTR排序，选出top k个，作为召回结果。
 * 可以根据商品的标签信息，统计出该标签下所有商品，并按照CTR排序，得出召回结果。
 
-#### 社会化推荐
+### 2.5 社会化推荐
 
 根据用户的社会关系，推荐朋友的朋友中与用户“志同道合”的朋友给用户，或者将与用户“志同道合”的朋友们感兴趣的项目推荐给用户，这种推荐算法主要应用于像QQ、微信和Facebook之类的社交软件中。
 
-### 排序
+## 3. 排序
 
 涉及一个item、item对、item序列的打分任务；涉及LR、GBDT、RNN、DNN模型。
 
 [Learning to Rank简介（没看）](https://www.cnblogs.com/bentuwuying/p/6681943.html)
 
-#### point-wise(single)
+### 3.1 point-wise(single)
 
 * 协同过滤（Collaborative filtering）
 * 基于内容的推荐（Content based）
@@ -86,13 +86,13 @@ Item2vec
 
 比较代表性的有LR、XGBoost。
 
-#### pair-wise(pair)
+### 3.2 pair-wise(pair)
 
 从排序序列中抽出“数据对”，每个数据对都有代表它们相对关系的标签。然后我们使用标签数据来训练一个分类模型，再用分类模型做排序。
 
 比较代表性的有RankSVM、LambdaMART。
 
-#### list-wise(list)
+### 3.3 list-wise(list)
 
 不同于pair-wise方法，list-wise方法将整个结果作为一个训练实例。
 
@@ -105,7 +105,7 @@ Item2vec
 
 比较代表性的有ListNet。
 
-#### 一些问题以及解决方案
+### 3.4 一些问题以及解决方案
 
 一些问题：
 
@@ -130,7 +130,7 @@ Item2vec
 
 [线下AUC与线上CTR不一致问题](http://rongzijing.win/index.php/archives/199/)
 
-### 推荐系统和知识图谱
+## 4. 推荐系统和知识图谱
 
 [推荐算法不够精准？让知识图谱来解决](https://www.msra.cn/zh-cn/news/features/embedding-knowledge-graph-in-recommendation-system-i)
 
